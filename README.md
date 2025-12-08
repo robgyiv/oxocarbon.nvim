@@ -36,6 +36,7 @@ The colorscheme explicitly adds highlights for the following plugins:
 - Neogit
 - Gitsigns
 - Hydra
+- Flash
 
 And many others should "just work!" If you have a plugin that needs explicit highlights, feel free to open an issue or PR and I would be happy to add them.  
 
@@ -50,13 +51,13 @@ use {'nyoom-engineering/oxocarbon.nvim'}
 ```
 ### Lazy.nvim
 ```lua
-return { 
+return {
   "nyoom-engineering/oxocarbon.nvim"
   -- Add in any other configuration; 
   --   event = foo, 
   --   config = bar
   --   end,
-}, 
+}
 ```
 ### Usage
 
@@ -78,6 +79,7 @@ You can also add a transparent background by adding the following lines after `c
 ```lua
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 ```
 
 For nyoom.nvim users:

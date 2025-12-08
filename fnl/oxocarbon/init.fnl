@@ -175,6 +175,7 @@
 
 ;; lsp
 
+(custom-set-face! :LspCodeLens [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceText [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceread [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceWrite [] {:fg oxocarbon.none :bg oxocarbon.base03})
@@ -183,6 +184,7 @@
 ;; lps-semantic-tokens
 (custom-set-face! "@lsp.type.class" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.decorator" [] {:link "Decorator"})
+(custom-set-face! "@lsp.type.decorator.markdown" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.function" [] {:link "@function"})
 (custom-set-face! "@lsp.type.macro" [] {:link "Macro"})
 (custom-set-face! "@lsp.type.method" [] {:link "@function"})
@@ -288,7 +290,9 @@
 ;; window
 
 (custom-set-face! :Title [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+;; VertSplit has been replaced by `WinSpeperator` in nvim 0.10
 (custom-set-face! :VertSplit [] {:fg oxocarbon.base01 :bg oxocarbon.base00})
+(custom-set-face! :WinSeparator [] {:fg oxocarbon.base01 :bg oxocarbon.base00})
 
 ;; regular syntax
 
@@ -352,6 +356,52 @@
                   {:fg oxocarbon.base08 :bg oxocarbon.none})
 (custom-set-face! :markdownOrderedListMarker []
                   {:fg oxocarbon.base08 :bg oxocarbon.none})
+
+; markdown treesitter
+(custom-set-face! "@markup" [] {:link "@none"})
+(custom-set-face! "@markup.environment" [] {:link "Macro"})
+(custom-set-face! "@markup.environment.name" [] {:link "Type"})
+(custom-set-face! "@markup.emphasis" [] {:italic true})
+(custom-set-face! "@markup.italic" [] {:italic true})
+(custom-set-face! "@markup.strikethrough" [] {:strikethrough true})
+(custom-set-face! "@markup.strong" [] {:bold true})
+(custom-set-face! "@markup.underline" [] {:underline true})
+
+(custom-set-face! "@markup.heading" [] {:link "Title"})
+(custom-set-face! "@markup.heading.marker" [] {:link :markdownHeadingDelimiter})
+(custom-set-face! "@markup.heading.1.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.2.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.3.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.4.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.5.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.6.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.7.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.8.markdown" [] {:link "markdownH1"})
+
+(custom-set-face! "@markup.link" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.label" [] {:underline true})
+(custom-set-face! "@markup.link.label.symbol" [] {:link "markdownItalic"})
+(custom-set-face! "@markup.link.label.markdown_inline" [] {:link "markdownItalic"})
+(custom-set-face! "@markup.link.title" [] {:link "Title"})
+(custom-set-face! "@markup.link.url" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.destination" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.description" [] {:fg oxocarbon.blend :underline true :italic true})
+
+(custom-set-face! "@markup.list" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.bullet" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.checked" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.markdown" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.ordered" [] {:link "markdownOrderedListMarker"})
+(custom-set-face! "@markup.list.unchecked" [] {:link "markdownListMarker"})
+
+(custom-set-face! "@markup.math" [] {:link "Special"})
+(custom-set-face! "@markup.raw" [] {:link "String"})
+(custom-set-face! "@markup.raw.markdown_inline" [] {:link "String"})
+(custom-set-face! "@markup.quote" [] {:link "markdownBlockquote"})
+
+(custom-set-face! "@markup.literal" [] {:link "markdownCode"})
+(custom-set-face! "@markup.code.block" [] {:link "markdownCodeBlock"})
+(custom-set-face! "@markup.rule" [] {:link "Comment"})
 
 ;; asciidoc
 
@@ -485,6 +535,7 @@
 (custom-set-face! "@tag" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 (custom-set-face! "@tag.attribute" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
 (custom-set-face! "@tag.delimiter" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! "@tag.builtin.tsx" [] {:link "@tag.tsx"})
 
 ;;; Conceal
 ;; @conceal
@@ -620,6 +671,9 @@
 (custom-set-face! :NeogitHunkHeader [] {:fg oxocarbon.base04 :bg oxocarbon.base02})
 (custom-set-face! :NeogitHunkHeaderHighlight [] {:fg oxocarbon.base04 :bg oxocarbon.base03})
 
+;; gitsigns
+(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment" })
+
 ;; hydra
 
 (custom-set-face! :HydraRed [] {:fg oxocarbon.base12 :bg oxocarbon.none})
@@ -665,5 +719,9 @@
 (custom-set-face! :VimwikiList [] {:link "markdownListMarker"})
 (custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
 (custom-set-face! :VimwikiCode [] {:link "markdownCode"})
+
+;; flash
+
+(custom-set-face! :FlashLabel [:bold] {:fg oxocarbon.base05 :bg oxocarbon.base00})
 
 { : oxocarbon }
